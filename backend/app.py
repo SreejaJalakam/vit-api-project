@@ -73,5 +73,12 @@ def bfhl():
     except Exception as e:
         return jsonify({"is_success": False, "error": str(e)}), 500
 
+@app.route("/", methods=["GET"])
+def home():
+    return {
+        "message": "Welcome! 🚀 API is live. Use POST /bfhl to send data."
+    }, 200
+
+
 if __name__ == '__main__':
     app.run(debug=True)
